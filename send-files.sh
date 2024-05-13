@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ -f '/tmp/rsync-sending' ]; then
+  echo '[*] Rsync task already running'
+  exit 0
+else
+  touch /tmp/rsync-sending
+fi
+
 if [ -z ${1} ]; then
   echo '[*] Please, provide a path to send in 1st argument'
   exit 1
@@ -8,32 +15,32 @@ elif ! ([ -f ${1} ] || [ -d ${1} ]); then
   exit 1
 fi
 
-if [ -z ${2}]; then
+if [ -z ${2} ]; then
   bandwidth_lim='20m'
 else
   bandwidth_lim=${2}
 fi
 
 # Private key for password-less SSH connection ...
-path_to_private_key='./ssh-keys/id_rsa'
+path_to_private_key='/home/pi/apDevice/ssh-keys/id_rsa'
 
 # Necessary to access RSync daemons module on server ...
-export RSYNC_PASSWORD='PASSWORD HERE'
+export RSYNC_PASSWORD='RSYNC_USER_PASSWORD'
 
 # Specifies SSH command which RSync will be using for data transfer ...
-export RSYNC_CONNECT_PROG="ssh -i ${path_to_private_key} -p <PORT> <SSH_USER>@<SSH_SERVER>"
+export RSYNC_CONNECT_PROG="ssh -i ${path_to_private_key} -p <SSH_PORT> <SSH_USER>@<SSH_SERVER>"
 
 # Specifies Rsync credentials
-remote_dir=<RSYNC_USER>@<RSYNC_SERVER>::<RSYNC_MODULE_NAME>
+remote_dir=<RSYNC_USER>@<RSYNC_SERVER>::<RSYNC_MODULE>
 
 # Paths to log files ...
-rsync_log_file='./rsync.log'
+rsync_log_file='/home/pi/apDevice/logs/rsync.log'
 
 timeout 4m rsync \
   --log-file=${rsync_log_file} \
   --bwlimit=${bandwidth_lim} \
   --recursive \
-  --delete-after \
+  --remove-source-files \
   --compress-level=9 \
   --partial \
   ${1} ${remote_dir} > /dev/null 2>&1
@@ -43,3 +50,5 @@ if [ $? -eq 0 ]; then
 else
   echo '[*] Complete with error ...'
 fi
+
+rm -rf /tmp/rsync-sending

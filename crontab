@@ -24,5 +24,6 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 #
 # m h  dom mon dow   command
-*/5 0-8 * * * /home/pi/apDevice/send-files.sh /home/pi/apDevice/data/ >> /home/pi/apDevice/logs/main.log
-*/5 8-0 * * * /home/pi/apDevice/send-files.sh /home/pi/apDevice/data/ 200 >> /home/pi/apDevice/logs/main.log
+# */15 * * * * python3 /home/pi/apDevice/script.py >> /home/pi/apDevice/logs/main.log
+*/5 0-7 * * * /home/pi/apDevice/send-files.sh /home/pi/apDevice/data/ >> /home/pi/apDevice/logs/main.log
+*/5 8-23 * * * /home/pi/apDevice/send-files.sh /home/pi/apDevice/data/ 200 >> /home/pi/apDevice/logs/main.log
