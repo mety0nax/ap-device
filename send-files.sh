@@ -40,6 +40,7 @@ timeout 4m rsync \
   --log-file=${rsync_log_file} \
   --bwlimit=${bandwidth_lim} \
   --recursive \
+  --exclude '.gitkeep' \
   --remove-source-files \
   --compress-level=9 \
   --partial \
