@@ -4,5 +4,5 @@
 > Currently in developement ...
 >
 > Global TODOs:
-> - [ ] Create a Rsync sending functionality (do not add keys or server creds)
-> - [ ] Create data reading functionality.
+> - [x] Create a Rsync sending functionality (do not add keys or server creds)
+> - [x] Create data reading functionality template
