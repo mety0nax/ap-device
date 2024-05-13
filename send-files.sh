@@ -46,9 +46,9 @@ timeout 4m rsync \
   ${1} ${remote_dir} > /dev/null 2>&1
 
 if [ $? -eq 0 ]; then
-  echo '[*] Complete successfully ...'
+  echo '[*]' $(date) 'Complete successfully ...'
 else
-  echo '[*] Complete with error ...'
+  echo '[*]' $(date) 'Complete with error ...'
 fi
 
 rm -rf /tmp/rsync-sending
