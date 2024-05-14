@@ -9,9 +9,11 @@ fi
 
 if [ -z ${1} ]; then
   echo '[*] Please, provide a path to send in 1st argument'
+  rm -rf /tmp/rsync-sending
   exit 1
 elif ! ([ -f ${1} ] || [ -d ${1} ]); then
   echo '[*] Specified path does not exist'
+  rm -rf /tmp/rsync-sending
   exit 1
 fi
 
