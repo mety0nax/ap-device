@@ -3,11 +3,11 @@
 > [!IMPORTANT]
 > After successfull installation, do not forget to manually:
 > 1. Reset crontab by executing and saving crontab file :
-```bash
-sudo crontab -e
-```
+> ``` bash
+> sudo crontab -e
+> ```
 > 2. Rename the data folder ```./apDevice/data_<MAC_ADDRESS>``` :
-> ```sh
+> ``` bash
 > mv ./apDevice/data_XX-XX-XX-XX-XX ./apDevice/data_$(cat /sys/class/net/wlan0/address | tr ':' '-')
 > ```
 
