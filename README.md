@@ -13,5 +13,5 @@
 > ```
 > 2. Rename the data folder ```./apDevice/data_<MAC_ADDRESS>``` :
 > ``` bash
-> mv ./apDevice/data_XX-XX-XX-XX-XX ./apDevice/data_$(cat /sys/class/net/wlan0/address | tr ':' '-')
+> mv ./apDevice/data_MAC ./apDevice/data_$(cat /sys/class/net/wlan0/address | tr ':' '-')
 > ```
