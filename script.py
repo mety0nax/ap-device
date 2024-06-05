@@ -1,6 +1,8 @@
+import os
 import sys
 import time
 import random
+import pathlib
 import datetime
 
 def main( ):
@@ -13,15 +15,19 @@ def main( ):
     print('[*] ERROR: Output directory does not exist')
     return
 
+  dirName = ''
   dirs = os.listdir(targetDir)
+  print(dirs)
   for d in dirs:
     if 'data_' in d:
       dirName = targetDir.joinpath(d)
       break
 
-  timer = random.randrange(60)
-  time = datetime.datetime.now( ).strftime('%d-%m-%Y___%H-%M-%S')
-  f_desc = open(f'{dirName.joinpath(f"{time}.txt")}', 'w')
+  timer = random.randrange(120)
+  ctime = datetime.datetime.now( ).strftime('%d-%m-%Y___%H-%M-%S')
+  print(dirName)
+  new_file = dirName.joinpath(f'{ctime}.txt')
+  f_desc = open(new_file, 'w')
   
   for i in range(timer):
     f_desc.write(f'{i}: Just a random text ...\n')
@@ -31,6 +37,6 @@ def main( ):
 
 if __name__ == '__main__':
   main( )
-  print('[*] Done with no errors')
+  print('[*] Success')
 else:
   print('This module is supposed to be run as __main__')
