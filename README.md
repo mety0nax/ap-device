@@ -2,13 +2,10 @@
 
 > [!IMPORTANT]
 > After successfull installation, do not forget to manually:
-> * Reset crontab by executing and saving crontab file:
-> ``` sudo crontab -e ```
-> * Rename the data folder ```./apDevice/data_<MAC_ADDRESS> ```:
+> * Reset crontab by executing and saving crontab file : ``` sudo crontab -e ```
+> * Rename the data folder ```./apDevice/data_<MAC_ADDRESS>``` :
 > ```
-> read MAC </sys/class/net/wlan0/address
-> MAC=$(echo ${MAC} | tr ':' '-')
-> mv ./apDevice/data_XX-XX-XX-XX-XX ./apDevice/data_${MAC}
+> mv ./apDevice/data_XX-XX-XX-XX-XX ./apDevice/data_$(cat /sys/class/net/wlan0/address | tr ':' '-')
 > ```
 
 Global TODOs:
