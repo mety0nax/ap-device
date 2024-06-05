@@ -3,7 +3,7 @@
 > [!NOTE]
 > Currently in developement ...
 >
->
+
 > [!IMPORTANT]
 > After successfull installation, do not forget to manually:
 > * Reset crontab by executing and saving crontab file:
@@ -14,7 +14,7 @@
 > MAC=$(echo ${MAC} | tr ':' '-')
 > mv ./apDevice/data_XX-XX-XX-XX-XX ./apDevice/data_${MAC}
 > ```
->
+
 > Global TODOs:
 > - [x] File transfer functionality via Rsync (do not add keys or any credentials)
 > - [x] Create a script that simulates data generation (testing)
