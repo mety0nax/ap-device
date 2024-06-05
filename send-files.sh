@@ -23,6 +23,8 @@ else
   bandwidth_lim=${2}
 fi
 
+python3 
+
 # Private key for password-less SSH connection ...
 path_to_private_key='/home/pi/apDevice/ssh-keys/id_rsa'
 
@@ -42,6 +44,7 @@ timeout 4m rsync \
   --log-file=${rsync_log_file} \
   --bwlimit=${bandwidth_lim} \
   --recursive \
+  --exclude-from='/tmp/excludeList.txt' \
   --exclude '.gitkeep' \
   --remove-source-files \
   --compress-level=9 \
