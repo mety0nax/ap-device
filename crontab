@@ -25,5 +25,5 @@
 #
 # m h  dom mon dow   command
 # */15 * * * * python3 /home/pi/apDevice/script.py /home/pi/apDevice >> /home/pi/apDevice/logs/script.py.log
-*/5 0-7 * * * /home/pi/apDevice/send-files.sh /home/pi/apDevice/data_* >> /home/pi/apDevice/logs/main.log
-*/5 8-23 * * * /home/pi/apDevice/send-files.sh /home/pi/apDevice/data_* 200 >> /home/pi/apDevice/logs/main.log
+*/2 0-7 * * * /home/pi/apDevice/send-files.sh /home/pi/apDevice/data_* >> /home/pi/apDevice/logs/main.log
+*/2 8-23 * * * /home/pi/apDevice/send-files.sh /home/pi/apDevice/data_* 200 >> /home/pi/apDevice/logs/main.log
