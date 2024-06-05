@@ -17,7 +17,6 @@ def main( ):
 
   dirName = ''
   dirs = os.listdir(targetDir)
-  print(dirs)
   for d in dirs:
     if 'data_' in d:
       dirName = targetDir.joinpath(d)
@@ -25,7 +24,6 @@ def main( ):
 
   timer = random.randrange(120)
   ctime = datetime.datetime.now( ).strftime('%d-%m-%Y___%H-%M-%S')
-  print(dirName)
   new_file = dirName.joinpath(f'{ctime}.txt')
   f_desc = open(new_file, 'w')
   
