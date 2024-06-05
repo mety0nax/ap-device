@@ -23,7 +23,7 @@ else
   bandwidth_lim=${2}
 fi
 
-python3 
+python3 /home/pi/apDevice/prepExcludeList.py /home/pi/apDevice/data_*
 
 # Private key for password-less SSH connection ...
 path_to_private_key='/home/pi/apDevice/ssh-keys/id_rsa'

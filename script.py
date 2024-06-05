@@ -1,15 +1,36 @@
+import sys
+import time
+import random
 import datetime
 
-net_iface = 'wlan0'
-
 def main( ):
-  mac_addr = open(f'/sys/class/net/{net_iface}/address').readline( ).strip( ).replace(':', '-')
-  device_id = open('/home/pi/apDevice/deviceID').readline( ).strip( )
-  time = datetime.datetime.now( ).strftime('%d-%m-%Y_%H-%M-%S')
-  f_desc = open('/home/pi/apDevice/data/' + f'{mac_addr}___{device_id}___{time}', 'w')
+  if len(sys.argv) <= 1:
+    print('[*] ERROR: Output directory is not specified')
+    return
+
+  targetDir = pathlib.Path(sys.argv[1])
+  if not targetDir.exists( ):
+    print('[*] ERROR: Output directory does not exist')
+    return
+
+  dirs = os.listdir(targetDir)
+  for d in dirs:
+    if 'data_' in d:
+      dirName = targetDir.joinpath(d)
+      break
+
+  timer = random.randrange(60)
+  time = datetime.datetime.now( ).strftime('%d-%m-%Y___%H-%M-%S')
+  f_desc = open(f'{dirName.joinpath(f"{time}.txt")}', 'w')
+  
+  for i in range(timer):
+    f_desc.write(f'{i}: Just a random text ...\n')
+    time.sleep(1)
+
   f_desc.close( )
 
 if __name__ == '__main__':
   main( )
+  print('[*] Done with no errors')
 else:
   print('This module is supposed to be run as __main__')
