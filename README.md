@@ -1,9 +1,17 @@
-# apDevice
+# Global TODOs:
+- [x] File transfer functionality via Rsync (do not add keys or any credentials)
+- [x] Create a script that simulates data generation (testing)
+- [x] Create separate installation script
+- [ ] Restart cron and load new config after installation
+- [x] Add functionality to verify that current data folder is using the device MAC (maybe on each boot)
 
-> [!NOTE]
-> Currently in developement ...
->
-> Global TODOs:
-> - [x] Create a sending functionality via Rsync (do not add keys or server creds)
-> - [x] Create a template for data generation
-> - [x] Installation script is provided in a separate installation.tar archive
+> [!IMPORTANT]
+> After successfull installation, do not forget to manually:
+> 1. Reset crontab by executing and saving crontab file:
+> ```bash
+> sudo crontab -e
+> ```
+> 2. Rename the data folder ```./apDevice/data_<MAC_ADDRESS>```:
+> ```bash
+> sudo mv ./apDevice/data_MAC ./apDevice/data_$(cat /sys/class/net/wlan0/address | tr ':' '-')
+> ```
