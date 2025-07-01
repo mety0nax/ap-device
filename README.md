@@ -25,10 +25,10 @@ To stream preview and record from one camera at the same time it is necessary to
 > Generated using pi-gen, https://github.com/RPi-Distro/pi-gen, 891df1e21ed2b6099a2e6a13e26c91dea44b34d4, stage4
 > ```
 
-**1. Install ```v4l2loopback``` Kernel Module and Utils.**
+**1. Install ```v4l2loopback``` Kernel Module and Utils - [https://github.com/v4l2loopback/v4l2loopback](https://github.com/v4l2loopback/v4l2loopback)**
 ```bash
 sudo apt install v4l2loopback-dkms v4l2loopback-utils
-Official Repository - [https://github.com/v4l2loopback/v4l2loopback](https://github.com/v4l2loopback/v4l2loopback)
+Official Repository - 
 ```
 
 **2. Load ```v4l2loopback``` Module at Boot.**
