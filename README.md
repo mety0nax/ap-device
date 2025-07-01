@@ -5,7 +5,7 @@ To stream preview and record from one camera at the same time it is necessary to
 
 > [!IMPORTANT]
 >
-> [Official ```v4l2loopback``` Repository](https://github.com/v4l2loopback/v4l2loopback)
+> Official ```v4l2loopback``` GitHub Repository - [Link](https://github.com/v4l2loopback/v4l2loopback)
 > 
 > **OS used for installation:**
 > ```bash
