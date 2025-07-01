@@ -3,7 +3,7 @@
 [!Streaming & Recording]
 To stream preview and record from one camera at the same time it is necessary to generate two v4l2loopback virtual cameras. This could be ahived in three steps:
 
-> ![IMPORTANT]
+> [!IMPORTANT]
 > OS used for installation:
 > ```bash
 > hwuser@hwdev22:~ $ cat /etc/os-release
