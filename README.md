@@ -4,9 +4,6 @@
 To stream preview and record from one camera at the same time it is necessary to generate two ```v4l2loopback``` virtual cameras. This could be ahived in three steps:
 
 > [!IMPORTANT]
->
-> Official ```v4l2loopback``` GitHub Repository - [Link](https://github.com/v4l2loopback/v4l2loopback)
-> 
 > **OS used for installation:**
 > ```bash
 > hwuser@hwdev22:~ $ cat /etc/os-release
@@ -31,6 +28,7 @@ To stream preview and record from one camera at the same time it is necessary to
 **1. Install ```v4l2loopback``` Kernel Module and Utils.**
 ```bash
 sudo apt install v4l2loopback-dkms v4l2loopback-utils
+Official Repository - [https://github.com/v4l2loopback/v4l2loopback](https://github.com/v4l2loopback/v4l2loopback)
 ```
 
 **2. Load ```v4l2loopback``` Module at Boot.**
