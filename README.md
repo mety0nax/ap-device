@@ -4,6 +4,9 @@
 To stream preview and record from one camera at the same time it is necessary to generate two ```v4l2loopback``` virtual cameras. This could be ahived in three steps:
 
 > [!IMPORTANT]
+>
+> **[Link](https://github.com/v4l2loopback/v4l2loopback) to Official ```v4l2loopback``` Reposiory**
+> 
 > **OS used for installation:**
 > ```bash
 > hwuser@hwdev22:~ $ cat /etc/os-release
@@ -24,9 +27,6 @@ To stream preview and record from one camera at the same time it is necessary to
 > Raspberry Pi reference 2024-11-19
 > Generated using pi-gen, https://github.com/RPi-Distro/pi-gen, 891df1e21ed2b6099a2e6a13e26c91dea44b34d4, stage4
 > ```
-> **[Link](https://github.com/v4l2loopback/v4l2loopback) to Official ```v4l2loopback``` Reposiory**
-> 
-
 
 **1. Install ```v4l2loopback``` Kernel Module and Utils.**
 ```bash
